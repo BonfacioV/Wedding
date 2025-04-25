@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr & Mrs Moabelo - Wedding Celebration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #E8C547;
+            --dark-gold: #B8860B;
+            --pink: #FFC0CB;
+            --white: #FFFFFF;
+            --light-grey: #F5F5F5;
+            --medium-grey: #E0E0E0;
+            --dark-grey: #333333;
+            --black: #111111;
+            --neon-blue: #00D4FF;
+            --neon-green: #00FF88;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-grey);
+            background: linear-gradient(135deg, var(--white), var(--light-grey), var(--dark-gold));
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--dark-grey);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 192, 203, 0.8));
+            z-index: 1000;
+            padding: 1.2rem 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--light-gold);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--pink));
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('https://ik.imagekit.io/vxr6lx7lt/Thumbnail%20Wedding%202.png?updatedAt=1745592047928?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: 10;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .couple-names {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .couple-names::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--pink));
+        }
+
+        .wedding-date {
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .countdown {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 400;
+            background: linear-gradient(45deg, var(--gold), var(--pink));
+            padding: 0.5rem 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 192, 203, 0.85));
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+
+        .section:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--dark-gold);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--pink), var(--gold));
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: var(--black);
+        }
+
+        .video-container:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-container iframe:hover {
+            opacity: 1;
+        }
+
+        .video-info {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            color: var(--dark-grey);
+            margin-bottom: 0.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .video-description {
+            color: var(--dark-grey);
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        /* Video Scroller */
+        .video-scroller {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            gap: 1.5rem;
+        }
+
+        .video-scroller::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .video-scroller::-webkit-scrollbar-track {
+            background: var(--light-grey);
+            border-radius: 8px;
+        }
+
+        .video-scroller::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 8px;
+        }
+
+        .video-scroll-item {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 85%;
+            max-width: 550px;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            gap: 0.5rem;
+            padding: 1rem;
+            max-width: 100%;
+        }
+
+        .gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery::-webkit-scrollbar-track {
+            background: var(--light-grey);
+            border-radius: 8px;
+        }
+
+        .gallery::-webkit-scrollbar-thumb {
+            background: var(--pink);
+            border-radius: 8px;
+        }
+
+        .gallery-item {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: min(260px, 33vw);
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            decoding: async;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+        }
+
+        .gallery-nav:hover {
+            background: var(--light-gold);
+        }
+
+        .gallery-nav-left {
+            left: 10px;
+        }
+
+        .gallery-nav-right {
+            right: 10px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: var(--white);
+            font-size: 35px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--pink);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 2010;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--light-gold);
+        }
+
+        .lightbox-nav-left {
+            left: 20px;
+        }
+
+        .lightbox-nav-right {
+            right: 20px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Pre-Footer */
+        .pre-footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 192, 203, 0.7));
+        }
+
+        .footer-text {
+            color: var(--dark-grey);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .heart {
+            color: #ff0000;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            text-align: center;
+            padding: 2rem;
+            background: var(--black);
+            border-top: 2px solid var(--neon-blue);
+            box-shadow: 0 0 10px var(--neon-blue);
+            z-index: 5;
+        }
+
+        /* Marketing Button */
+        .marketing-button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .marketing-button {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px var(--neon-blue);
+            cursor: pointer;
+            position: relative;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .marketing-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .marketing-button-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        /* Marketing Card */
+        .marketing-card {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+            background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 2px, transparent 2px, transparent 4px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 0 15px var(--neon-blue);
+            z-index: 2000;
+            color: var(--white);
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .marketing-card.active {
+            display: block;
+        }
+
+        .marketing-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .marketing-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        .marketing-card p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .marketing-card a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .marketing-card a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .marketing-card .contact-info {
+            margin-bottom: 1rem;
+        }
+
+        .marketing-card .close-card {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .marketing-card .close-card:hover {
+            color: var(--neon-green);
+        }
+
+        .marketing-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+        }
+
+        .marketing-overlay.active {
+            display: block;
+        }
+
+        /* Love Story Section */
+        .love-story {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .love-story p {
+            margin-bottom: 1.2rem;
+            color: var(--dark-grey);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 3.5rem;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .video-scroll-item {
+                width: 90%;
+            }
+
+            .gallery-item {
+                width: min(240px, 40vw);
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 0.5rem 1.2rem;
+            }
+
+            nav ul li a {
+                font-size: 1.1rem;
+            }
+
+            .marketing-card {
+                width: 90%;
+                padding: 1.2rem;
+            }
+
+            .marketing-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .marketing-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .marketing-card p {
+                font-size: 0.85rem;
+            }
+
+            .marketing-button {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .marketing-button-text {
+                font-size: 0.8rem;
+            }
+
+            .header-content {
+                padding: 1.5rem;
+            }
+
+            .gallery-nav, .lightbox-nav {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .couple-names {
+                font-size: 2.5rem;
+            }
+
+            .wedding-date {
+                font-size: 1.1rem;
+            }
+
+            .main-content {
+                padding: 1.2rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .gallery-item {
+                width: min(180px, 45vw);
+            }
+
+            .header-content {
+                padding: 1rem;
+            }
+
+            .gallery-nav, .lightbox-nav {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#videos">Our Videos</a></li>
+            <li><a href="#gallery">Our Gallery</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="header-content">
+            <h1 class="couple-names">Mr & Mrs Moabelo</h1>
+            <p class="wedding-date">28 • December • 2024</p>
+            <p>A South African Love Story - Ga-Matlala, Limpopo, South Africa</p>
+            <p class="countdown" id="countdown"></p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Wedding Videos Section -->
+        <section id="videos" class="section">
+            <h2 class="section-title">Our Wedding Videos</h2>
+            <p class="video-description" style="text-align: center; margin-bottom: 1.5rem;">Relive the magical moments of our grand celebration</p>
+            
+            <div class="video-scroller">
+                <!-- Video Part 1 -->
+                <div class="video-scroll-item">
+                    <div class="video-info">
+                        <h3 class="video-title">Day 1</h3>
+                        <p class="video-description">The Beautiful Moment We Became One!</p>
+                    </div>
+                    <div class="video-container">
+                        <iframe id="video1" src="https://www.youtube.com/embed/18rf4ictv94?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <!-- Video Part 2 -->
+                <div class="video-scroll-item">
+                    <div class="video-info">
+                        <h3 class="video-title">Day 2</h3>
+                        <p class="video-description">The Day After We Became One</p>
+                    </div>
+                    <div class="video-container">
+                        <iframe id="video2" src="https://www.youtube.com/embed/JIHZUb75_WI?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="section">
+            <h2 class="section-title">Our Gallery</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Some captured moments from our lavish wedding.</p>
+            
+            <div class="gallery-container">
+                <div class="gallery-nav gallery-nav-left" aria-label="Previous Image">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5661-Enhanced-NR.jpg?updatedAt=1745583799135" alt="Day 1 Photo 1" loading="lazy" decoding="async" data-index="0">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5642-Enhanced-NR.jpg?updatedAt=1745583799003" alt="Day 1 Photo 2" loading="lazy" decoding="async" data-index="1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5671-Enhanced-NR.jpg?updatedAt=1745583798626" alt="Day 1 Photo 3" loading="lazy" decoding="async" data-index="2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5770-Enhanced-NR.jpg?updatedAt=1745583817830" alt="Day 1 Photo 4" loading="lazy" decoding="async" data-index="3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5789-Enhanced-NR.jpg?updatedAt=1745583818962" alt="Day 1 Photo 5" loading="lazy" decoding="async" data-index="4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5811-Enhanced-NR.jpg?updatedAt=1745583834751" alt="Day 1 Photo 6" loading="lazy" decoding="async" data-index="5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5855-Enhanced-NR.jpg?updatedAt=1745583874092" alt="Day 1 Photo 7" loading="lazy" decoding="async" data-index="6">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5875-Enhanced-NR.jpg?updatedAt=1745583888570" alt="Day 1 Photo 8" loading="lazy" decoding="async" data-index="7">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5906-Enhanced-NR.jpg?updatedAt=1745583900006" alt="Day 1 Photo 9" loading="lazy" decoding="async" data-index="8">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7698-Enhanced-NR.jpg?updatedAt=1745584052851" alt="Day 1 Photo 10" loading="lazy" decoding="async" data-index="9">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7670-Enhanced-NR.jpg?updatedAt=1745584052632" alt="Day 1 Photo 11" loading="lazy" decoding="async" data-index="10">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7901-Enhanced-NR.jpg?updatedAt=1745584068642" alt="Day 1 Photo 12" loading="lazy" decoding="async" data-index="11">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5948-Enhanced-NR.jpg?updatedAt=1745583942872" alt="Day 1 Photo 13" loading="lazy" decoding="async" data-index="12">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_5937-Enhanced-NR.jpg?updatedAt=1745583924572" alt="Day 1 Photo 14" loading="lazy" decoding="async" data-index="13">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7921-Enhanced-NR.jpg?updatedAt=1745584080084" alt="Day 1 Photo 15" loading="lazy" decoding="async" data-index="14">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7924-Enhanced-NR.jpg?updatedAt=1745584081204" alt="Day 1 Photo 16" loading="lazy" decoding="async" data-index="15">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7863-Enhanced-NR.jpg?updatedAt=1745584066895" alt="Day 1 Photo 17" loading="lazy" decoding="async" data-index="16">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7859-Enhanced-NR.jpg?updatedAt=1745584065397" alt="Day 1 Photo 18" loading="lazy" decoding="async" data-index="17">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7821-Enhanced-NR.jpg?updatedAt=1745584060759" alt="Day 1 Photo 19" loading="lazy" decoding="async" data-index="18">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7721-Enhanced-NR.jpg?updatedAt=1745584057064" alt="Day 1 Photo 20" loading="lazy" decoding="async" data-index="19">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7657-Enhanced-NR.jpg?updatedAt=1745584046666" alt="Day 1 Photo 21" loading="lazy" decoding="async" data-index="20">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7329-Enhanced-NR.jpg?updatedAt=1745584031130" alt="Day 1 Photo 22" loading="lazy" decoding="async" data-index="21">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7331-Enhanced-NR.jpg?updatedAt=1745584032652" alt="Day 1 Photo 23" loading="lazy" decoding="async" data-index="22">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7319-Enhanced-NR.jpg?updatedAt=1745584027026" alt="Day 1 Photo 24" loading="lazy" decoding="async" data-index="23">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_6035-Enhanced-NR.jpg?updatedAt=1745584021725" alt="Day 1 Photo 25" loading="lazy" decoding="async" data-index="24">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_6028-Enhanced-NR.jpg?updatedAt=1745584019339" alt="Day 1 Photo 26" loading="lazy" decoding="async" data-index="25">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_6030-Enhanced-NR.jpg?updatedAt=1745584019636" alt="Day 1 Photo 27" loading="lazy" decoding="async" data-index="26">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_6032-Enhanced-NR.jpg?updatedAt=1745584019601" alt="Day 1 Photo 28" loading="lazy" decoding="async" data-index="27">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7600-Enhanced-NR.jpg?updatedAt=1745584036800" alt="Day 1 Photo 29" loading="lazy" decoding="async" data-index="28">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7902-Enhanced-NR.jpg?updatedAt=1745584069861" alt="Day 1 Photo 30" loading="lazy" decoding="async" data-index="29">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7879-Enhanced-NR.jpg?updatedAt=1745584069294" alt="Day 1 Photo 31" loading="lazy" decoding="async" data-index="30">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7650-Enhanced-NR.jpg?updatedAt=1745584042894" alt="Day 1 Photo 32" loading="lazy" decoding="async" data-index="31">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-1%20Photos/IMG_7338-Enhanced-NR.jpg?updatedAt=1745584034801" alt="Day 1 Photo 33" loading="lazy" decoding="async" data-index="32">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7572-Enhanced-NR.jpg?updatedAt=1745584069284" alt="Day 2 Photo 1" loading="lazy" decoding="async" data-index="33">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6501.jpg?updatedAt=1745584059303" alt="Day 2 Photo 2" loading="lazy" decoding="async" data-index="34">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6476-Enhanced-NR.jpg?updatedAt=1745584032912" alt="Day 2 Photo 3" loading="lazy" decoding="async" data-index="35">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6473.jpg?updatedAt=1745584029228" alt="Day 2 Photo 4" loading="lazy" decoding="async" data-index="36">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6485-Enhanced-NR.jpg?updatedAt=1745584043344" alt="Day 2 Photo 5" loading="lazy" decoding="async" data-index="37">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6507.jpg?updatedAt=1745584062390" alt="Day 2 Photo 6" loading="lazy" decoding="async" data-index="38">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7587-Enhanced-NR.jpg?updatedAt=1745584076839" alt="Day 2 Photo 7" loading="lazy" decoding="async" data-index="39">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7596-Enhanced-NR.jpg?updatedAt=1745584081573" alt="Day 2 Photo 8" loading="lazy" decoding="async" data-index="40">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7606-Enhanced-NR.jpg?updatedAt=1745584378660" alt="Day 2 Photo 9" loading="lazy" decoding="async" data-index="41">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7610-Enhanced-NR.jpg?updatedAt=1745584378724" alt="Day 2 Photo 10" loading="lazy" decoding="async" data-index="42">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_6507.jpg?updatedAt=1745584062390" alt="Day 2 Photo 11" loading="lazy" decoding="async" data-index="43">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://ik.imagekit.io/vxr6lx7lt/Day-2%20Photos/IMG_7596-Enhanced-NR.jpg?updatedAt=1745584081573" alt="Day 2 Photo 12" loading="lazy" decoding="async" data-index="44">
+                    </div>
+                </div>
+                <div class="gallery-nav gallery-nav-right" aria-label="Next Image">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Story Section -->
+        <section id="story" class="section love-story">
+            <h2 class="section-title">Our Love Story</h2>
+            <p>From our first meeting to saying "I do," every moment has been a beautiful chapter in our love story.</p>
+            <p>We met in 2018 at a mutual friend's braai, where sparks flew over shared laughter and dance. After five years of adventures, dreams, and unwavering love, we celebrated our union in a grand South African wedding, surrounded by family, friends, and rich traditions.</p>
+            <p>Our wedding day was a magnificent affair, filled with joy, opulence, and the vibrant spirit of South Africa, marking the start of our forever together.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get in Touch</h2>
+            <p style="text-align: center;">I'd love to hear from you! Reach out via WhatsApp to share your blessings or for any queries.</p>
+            <p style="text-align: center; margin-top: 1rem;">
+                <a href="https://wa.me/27814563358" target="_blank" style="color: var(--green); font-weight: 1000; text-decoration: none;">Contact Us</a>
+            </p>
+        </section>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/27814563358" class="whatsapp-float" target="_blank" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" aria-label="Close Lightbox">×</span>
+        <div class="lightbox-nav lightbox-nav-left" aria-label="Previous Image">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <img src="" alt="Lightbox Image" id="lightbox-img">
+        <div class="lightbox-nav lightbox-nav-right" aria-label="Next Image">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <!-- Pre-Footer -->
+    <div class="pre-footer">
+        <p class="footer-text">Thank you for being part of our unforgettable journey!</p>
+        <p class="footer-text">Made with <span class="heart">❤</span> by Mr & Mrs Moabelo!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="marketing-button-container">
+            <div class="marketing-button" onclick="toggleMarketingCard()">
+                <i class="fas fa-code"></i>
+            </div>
+            <span class="marketing-button-text">Webpage by Bonny Venacio</span>
+        </div>
+        <div class="marketing-overlay" id="marketing-overlay"></div>
+        <div class="marketing-card" id="marketing-card">
+            <span class="close-card" onclick="toggleMarketingCard()" aria-label="Close Marketing Card">×</span>
+            <img src="https://ik.imagekit.io/vxr6lx7lt/1652910466389.jpg?updatedAt=1745593275871?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Bonny Venacio">
+            <h3>Bonny Venacio</h3>
+            <p>I’m Bonny Venacio, a web developer building sleek webpages and innovative web apps with a cyber edge. Feel free to reach out if you'd like a website tailored specifically to your needs. I'll code your vision into reality!</p>
+            <div class="contact-info">
+                <p><a href="https://wa.me/27717201758" target="_blank">071 720 1758</a></p>
+                <p><a href="mailto:venaciokb@gmail.com">venaciokb@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js with heart shapes
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 30,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": ["#D4AF37", "#FFC0CB"]
+                },
+                "shape": {
+                    "type": "image",
+                    "image": {
+                        "src": "https://cdn-icons-png.flaticon.com/512/833/833472.png",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 15,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": true,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "bubble": {
+                        "distance": 150,
+                        "size": 20,
+                        "duration": 2,
+                        "opacity": 0.7
+                    },
+                    "push": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Disable right-click
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Toggle marketing card
+        function toggleMarketingCard() {
+            const card = document.getElementById('marketing-card');
+            const overlay = document.getElementById('marketing-overlay');
+            card.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Lightbox and Gallery functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeLightbox = document.querySelector('.lightbox-close');
+            const lightboxNavLeft = document.querySelector('.lightbox-nav-left');
+            const lightboxNavRight = document.querySelector('.lightbox-nav-right');
+            let currentIndex = 0;
+
+            // Open lightbox on image click
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentIndex = parseInt(item.getAttribute('data-index'));
+                    lightboxImg.src = item.src;
+                    lightbox.style.display = 'flex';
+                });
+            });
+
+            // Close lightbox
+            closeLightbox.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            // Lightbox navigation
+            lightboxNavLeft.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                lightboxImg.src = galleryItems[currentIndex].src;
+            });
+
+            lightboxNavRight.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                lightboxImg.src = galleryItems[currentIndex].src;
+            });
+
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            // Gallery navigation
+            const gallery = document.querySelector('.gallery');
+            const navLeft = document.querySelector('.gallery-nav-left');
+            const navRight = document.querySelector('.gallery-nav-right');
+            const galleryItem = document.querySelector('.gallery-item');
+
+            navLeft.addEventListener('click', () => {
+                gallery.scrollBy({ left: -galleryItem.offsetWidth, behavior: 'smooth' });
+            });
+
+            navRight.addEventListener('click', () => {
+                gallery.scrollBy({ left: galleryItem.offsetWidth, behavior: 'smooth' });
+            });
+
+            // Smooth scrolling for video scroller
+            const videoScroller = document.querySelector('.video-scroller');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            videoScroller.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - videoScroller.offsetLeft;
+                scrollLeft = videoScroller.scrollLeft;
+            });
+
+            videoScroller.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            videoScroller.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            videoScroller.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - videoScroller.offsetLeft;
+                const walk = (x - startX) * 2;
+                videoScroller.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch support for video scroller
+            videoScroller.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - videoScroller.offsetLeft;
+                scrollLeft = videoScroller.scrollLeft;
+            });
+
+            videoScroller.addEventListener('touchend', () => {
+                isDown = false;
+            });
+
+            videoScroller.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.touches[0].pageX - videoScroller.offsetLeft;
+                const walk = (x - startX) * 2;
+                videoScroller.scrollLeft = scrollLeft - walk;
+            });
+
+            // Countdown timer
+            const countdownElement = document.getElementById('countdown');
+            const weddingDate = new Date('2024-12-28').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance < 0) {
+                    countdownElement.textContent = 'Our magnificent wedding day has arrived!';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                requestAnimationFrame(updateCountdown);
+            }
+
+            requestAnimationFrame(updateCountdown);
+
+            // Play video on click
+            function playVideo(videoId) {
+                const iframe = document.getElementById(videoId);
+                if (iframe.src.includes('autoplay=0')) {
+                    iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+                } else {
+                    iframe.src += '&autoplay=1';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
