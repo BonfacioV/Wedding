@@ -17,7 +17,6 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#videos">Our Videos</a></li>
-            <li><a href="#gallery">Our Gallery</a></li>
             <li><a href="#story">Our Story</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -56,6 +55,7 @@
                 </div>
             </div>
         </section>
+        <!--
         <section id="gallery" class="section">
             <h2 class="section-title" role="heading" aria-level="2"><i class="fas fa-images" aria-hidden="true"></i>Our Gallery</h2>
             <p style="text-align:center;margin-bottom:1.5rem">Precious moments from our lavish wedding.</p>
@@ -111,6 +111,7 @@
                 <div class="gallery-nav gallery-nav-right" aria-label="Next Image"><i class="fas fa-chevron-right"></i></div>
             </div>
         </section>
+        -->
         <section id="story" class="section love-story">
             <h2 class="section-title" role="heading" aria-level="2"><i class="fas fa-book-heart" aria-hidden="true"></i>Our Love Story</h2>
             <p>Every love story is unique, and ours is a journey of devotion, growth, and shared dreams. From the moment we met to the day we exchanged vows, every step has been a testament to the beauty of love and companionship.</p>
@@ -233,6 +234,7 @@ function toggleMarketingCard() {
 
 document.addEventListener("DOMContentLoaded", () => {
     initParticles();
+    /*
     const galleryImages = document.querySelectorAll(".gallery-item img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -314,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
     galleryNavRight.addEventListener("click", () => {
         gallery.scrollBy({ left: galleryItem.offsetWidth, behavior: "smooth" });
     });
-
+    */
     const videoScroller = document.querySelector(".video-scroller");
     let isDragging = false;
     let startX, scrollLeft;
